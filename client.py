@@ -26,8 +26,9 @@ class kafka_class:
         # send any outstanding or buffered messages to the Kafka broker
         producer.flush()
 
-    def consume(topic, config):
+    def consume(self, topic):
         # sets the consumer group ID and offset
+        config = self.config.copy()
         config["group.id"] = "python-group-1"
         config["auto.offset.reset"] = "earliest"
 
