@@ -14,7 +14,7 @@ class kafka_class:
                         parameter, value = line.strip().split('=', 1)
                         config[parameter] = value.strip()
         except FileNotFoundError:
-            raise Exception("Error: The file was not found.")
+            raise Exception("Error: The file was not found.") 
         return config
         
     def produce(self, topic, key, value):
